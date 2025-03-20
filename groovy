@@ -13,12 +13,12 @@ pipeline {
         }
         stage('Checkout Code') {
             steps {
-                git branch: 'main', url: 'https://github.com/your-repository-url.git'
+                git branch: 'main', url: 'https://github.com/Avani-Satam/jenkins-pipeline-example.git'
             }
         }
         stage('Build') {
             steps {
-                dir("your-workspace-path") {
+                dir("http://localhost:8080/job/demopipelinetask/1/ws/") {
                     sh 'mvn -B -DskipTests clean package'
                 }
             }
